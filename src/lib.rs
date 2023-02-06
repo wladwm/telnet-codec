@@ -45,7 +45,7 @@ impl From<TelnetEvent> for Bytes {
                 out.reserve(5 + data.len());
                 out.extend(&[IAC, SB, op]);
                 out.extend(data);
-                out.extend(&[IAC, SB]);
+                out.extend(&[IAC, SE]);
             },
             TelnetEvent::Command(byte) => {
                 out.reserve(2);
